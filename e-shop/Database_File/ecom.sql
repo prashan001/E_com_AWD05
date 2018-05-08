@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2018 at 03:22 PM
+-- Generation Time: May 08, 2018 at 07:19 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -43,6 +43,30 @@ INSERT INTO `grid` (`Grid_id`, `Grid_Des`, `Grid_img`, `Grid_Text`, `Grid_Gen`, 
 (0, 'Item 01', 'css/images/big1.jpg', 'best design 01', 'Men', '$58.95'),
 (1, 'Item 02', 'css/images/big2.jpg', 'best design 02', 'Women', '$49.25'),
 (2, 'Item 03', 'css/images/big3.jpg', 'best design 03', 'Men', '$78.25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `grid2`
+--
+
+CREATE TABLE `grid2` (
+  `Grid_id` int(11) NOT NULL,
+  `Grid_Img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `grid2`
+--
+
+INSERT INTO `grid2` (`Grid_id`, `Grid_Img`) VALUES
+(1, 'css/images/small1.jpg'),
+(2, 'css/images/small2.jpg'),
+(4, 'css/images/small3.jpg'),
+(5, 'css/images/small4.jpg'),
+(6, 'css/images/small5.jpg'),
+(7, 'css/images/small6.jpg'),
+(8, 'css/images/small7.jpg');
 
 -- --------------------------------------------------------
 
@@ -110,6 +134,12 @@ ALTER TABLE `grid`
   ADD PRIMARY KEY (`Grid_id`);
 
 --
+-- Indexes for table `grid2`
+--
+ALTER TABLE `grid2`
+  ADD PRIMARY KEY (`Grid_id`);
+
+--
 -- Indexes for table `navbar`
 --
 ALTER TABLE `navbar`
@@ -125,6 +155,11 @@ ALTER TABLE `slide`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `grid2`
+--
+ALTER TABLE `grid2`
+  MODIFY `Grid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `navbar`
 --
