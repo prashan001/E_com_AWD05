@@ -2,7 +2,7 @@
 namespace Model;
 
 use Core\G_Model;
-use Entity\Grid;
+use Entity\Grid2;
 class GridModel extends G_Model{
 
 

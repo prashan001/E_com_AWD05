@@ -22,6 +22,12 @@ require_once 'Entity/Slide.php';
 require_once 'Model/SlideModel.php';
 
 
+//grid
+
+require_once 'Entity/Grid2.php';
+require_once 'Model/GridModel2.php';
+
+
 
 //Categories_use
 use Model\NaviModel;
@@ -33,10 +39,17 @@ use Model\GridModel;
 $Grid1 = new GridModel();
 $Grid1= $Grid1->getAllGrid();
 
+//Grid2_use
+use Model\GridModel2;
+$Grid2 = new GridModel2();
+$Grid2= $Grid2->getAllGrid2();
+
 //Slide_use
 use Model\SlideModel;
 $Slide = new SlideModel();
 $Slide= $Slide->getAllSlideData();
+
+
 
 ?>
 
@@ -250,28 +263,10 @@ $Slide= $Slide->getAllSlideData();
 		<!-- More Products -->
 		<div class="more-products">
 			<div class="more-products-holder">
-				<ul>
-				    <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small1.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small2.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small3.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small4.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small5.jpg" alt="" /></a></li>
-				    <li><a href="#"><img src="css/images/small6.jpg" alt="" /></a></li>
-				    <li class="last"><a href="#"><img src="css/images/small7.jpg" alt="" /></a></li>
+				<ul><?php foreach($Grid2 as $Grid2):?>
+				    <li class=""><a href="#"><img src="<?php echo $Grid2->getName()?>" alt=""/></a></li>
+				    <li class="col-last"><a href="#"><img src="<?php echo $Grid2->getName()?>" alt=""/></a></li>
+				    <?php endforeach?>
 				</ul>
 			</div>
 			<div class="more-nav">
